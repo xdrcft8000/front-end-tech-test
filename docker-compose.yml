@@ -5,3 +5,16 @@ services:
       - "8000:8000"
     volumes:
       - ./data:/app/data
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/index.html:/app/index.html
+    environment:
+      - VITE_API_TARGET=http://api:8000
+      - VITE_WS_TARGET=ws://api:8000
+    depends_on:
+      - api
