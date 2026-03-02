@@ -179,8 +179,3 @@ venvs/
 .next/
 .swc/
 out/
-
-
-
-# Frontend (personal testing app, not part of the tech test)
-frontend/
